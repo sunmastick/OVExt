@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="@TextFile"
+            id="com.github.sunmastick.ovext.commands.textfile">
+      </category>
+      <command
+            name="Open"
+            defaultHandler="com.github.sunmastick.ovext.handlers.textfile.OpenTextFile"
+            categoryId="com.github.sunmastick.ovext.commands.textfile"
+            id="com.github.sunmastick.ovext.commands.openTextFile">
+      </command>
+      <command
+            name="Open and Paste"
+            defaultHandler="com.github.sunmastick.ovext.handlers.textfile.OpenPasteTextFile"
+            categoryId="com.github.sunmastick.ovext.commands.textfile"
+            id="com.github.sunmastick.ovext.commands.openPasteTextFile">
+      </command>
+      <command
+            name="Open and Copy"
+            defaultHandler="com.github.sunmastick.ovext.handlers.textfile.OpenCopyTextFile"
+            categoryId="com.github.sunmastick.ovext.commands.textfile"
+            id="com.github.sunmastick.ovext.commands.openCopyTextFile">
+      </command>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="OneVizion"
+               id="com.github.sunmastick.ovext.menus.oneVizionMenu">
+         </menu>
+      </menuContribution>
+      <menuContribution locationURI="menu:com.github.sunmastick.ovext.menus.oneVizionMenu">
+         <menu
+               label="@TextFile"
+               id="com.github.sunmastick.ovext.menus.textFileMenu">
+            <command
+                  commandId="com.github.sunmastick.ovext.commands.openTextFile"
+                  id="com.github.sunmastick.ovext.menus.openTextFileMenu">
+            </command>
+            <command
+			      commandId="com.github.sunmastick.ovext.commands.openPasteTextFile"
+			      id="com.github.sunmastick.ovext.menus.openTextFileMenu">
+			</command>
+			<command
+			      commandId="com.github.sunmastick.ovext.commands.openCopyTextFile"
+			      id="com.github.sunmastick.ovext.menus.openCopyTextFileMenu">
+			</command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
